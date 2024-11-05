@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Traditional Crafts Store</title>
+    <link rel="stylesheet" href="contact.css">
+    <script>
+        // Function to update the cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElement = document.getElementById('cart-count');
+            cartCountElement.textContent = cart.length;
+        }
+
+        // Initial update of the cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            <img src="back.jpg" alt="Back" class="back-icon">
+        </a>
+        <h1>Traditional Crafts Store</h1>
+        <nav>
+            <ul>
+                <li style="font-size: 19px;"><a href="index.html">Home</a></li>
+                <li style="font-size: 19px;"><a href="about.html">About</a></li>
+                <li style="font-size: 19px;"><a href="contact.html">Contact Us</a></li>
+                <li style="font-size: 19px;"><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="header-icons">
+                <a href="cart.html" class="cart-link">
+                    <img src="cart.jpg" alt="Cart" class="icon">
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+                <a href="signin.html"><img src="user1.jpg" alt="User" class="icon"></a>
+            </div>
+        </nav>
+    </header>    
+
+    <main>
+        <section class="contact-intro">
+            <h2>Get in Touch</h2>
+            <p>We would love to hear from you! Whether you have questions about our products, your order, or just want to chat, feel free to reach out.</p>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <br><br><br>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p>Email: support@traditionalcraftstore.com</p>
+            <p>Phone: +91 7986523410</p>
+            <p>Address: Riza Mansion, 9-1-262, Asilmetta Junction, Asilmetta, Visakhapatnam, Andhra Pradesh 530003</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Traditional Crafts Store | Empowering Artisans, Preserving Culture</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Toys - Crafts Store</title>
+    <link rel="stylesheet" href="toys.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            <img src="back.jpg" alt="Back" class="back-icon">
+        </a>
+        
+        <nav>
+            <div class="header-content">
+                <ul>
+                    <li style="font-size: 19px;"><a href="index.html">Home</a></li>
+                    <li style="font-size: 19px;"><a href="about.html">About</a></li>
+                    <li style="font-size: 19px;"><a href="contact.html">Contact Us</a></li>
+                    <li style="font-size: 19px;"><a href="blog.html">Blog</a></li>
+                    <li id="cart-icon">
+                        <a href="cart.html">
+                            <img src="cart.jpg" alt="Cart" class="icon">
+                            <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="color: brown;">Toys</h1>
+
+        <div class="main-content">
+            <aside class="filters">
+                <div class="toggle-container">
+                    <img id="toggleIcon" src="toggle-icon.png" alt="Toggle Icon" class="toggle-icon" />
+                </div>
+              <h2>Filters</h2>
+              <hr />
+              <div>
+                <h3>Price Range</h3>
+                <label for="minPriceInput">Min Price:</label>
+                <input type="number" id="minPriceInput" value="0" min="0" step="50" />
+                <label for="maxPriceInput">Max Price:</label>
+                <input type="number" id="maxPriceInput" value="600" min="0" step="50" />
+                <p>
+                  Price Range: <span id="priceRangeDisplay"><br>Rs.0 - Rs.600</span>
+                </p>
+              </div>
+              <hr />
+              <div class="filter-types">
+                <h3>Type</h3>
+                <label><input type="checkbox" value="All" checked /> All</label>
+                <label><input type="checkbox" value="Toys" /> Toys</label>
+                <label><input type="checkbox" value="Dolls" /> Dolls</label>
+                <label><input type="checkbox" value="Other" /> Other</label>
+              </div>
+              <hr />
+              <div class="sort-options">
+                <h3>Sort By</h3>
+                <select id="sortSelect">
+                  <option value="az">A-Z</option>
+                  <option value="za">Z-A</option>
+                  <option value="priceLowToHigh">Price: Low to High</option>
+                  <option value="priceHighToLow">Price: High to Low</option>
+                </select>
+              </div><br>
+    
+              <button id="applyFilters">Apply Filters</button>
+            </aside>
+
+        <div class="product-container" >
+            <div class="product" data-type="Toys" onclick="addToCart('Kondapalli Toys')">
+                <img src="toys1.jpg" alt="Kondapalli Toys">
+                <h2>Kondapalli Toys</h2>
+                <p>Price: Rs.199/-</p>
+                <button onclick="addToCart('Kondapalli Toys',199)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Toys" onclick="addToCart('Etikoppaka Toys')">
+                <img src="toys2.jpg" alt="Etikoppaka Toys">
+                <h2>Etikoppaka Toys</h2>
+                <p>Price: Rs.249/-</p>
+                <button onclick="addToCart('Etikoppaka Toys',249)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Dolls" onclick="addToCart('Thanjavur Dolls')">
+                <img src="toys3.jpg" alt="Thanjavur Dolls">
+                <h2>Thanjavur Dolls</h2>
+                <p>Price: Rs.299/-</p>
+                <button onclick="addToCart('Thanjavur Dolls',299)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Toys" onclick="addToCart('Terracotta Toys')">
+                <img src="toys4.jpg" alt="Terracotta Toys">
+                <h2>Terracotta Toys</h2>
+                <p>Price: Rs.129/-</p>
+                <button onclick="addToCart('Terracotta Toys',129)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Dolls" onclick="addToCart('Kathakali Dolls')">
+                <img src="toys5.jpg" alt="Kathakali Dolls">
+                <h2>Kathakali Dolls</h2>
+                <p>Price: Rs.349/-</p>
+                <button onclick="addToCart('Kathakali Dolls',349)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Other" onclick="addToCart('Kite (Patang)')">
+                <img src="toys6.jpg" alt="Kite (Patang)">
+                <h2>Kite (Patang)</h2>
+                <p>Price: Rs.99/-</p>
+                <button onclick="addToCart('Kite (Patang)',99)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Toys" onclick="addToCart('Chenda (Drum) Toys')">
+                <img src="toys7.jpg" alt="Chenda (Drum) Toys">
+                <h2>Chenda (Drum) Toys</h2>
+                <p>Price: Rs.199/-</p>
+                <button onclick="addToCart('Chenda (Drum) Toys',199)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Toys" onclick="addToCart('Bamboo Toys')">
+                <img src="toys8.jpg" alt="Bamboo Toys">
+                <h2>Bamboo Toys</h2>
+                <p>Price: Rs.179/-</p>
+                <button onclick="addToCart('Bamboo Toys',179)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Toys" onclick="addToCart('Channapatna Toys')">
+                <img src="toys9.jpg" alt="Channapatna Toys">
+                <h2>Channapatna Toys</h2>
+                <p>Price: Rs.149/-</p>
+                <button onclick="addToCart('Channapatna Toys',149)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Dolls" onclick="addToCart('Lambadi Dolls')">
+                <img src="toys10.jpg" alt="Lambadi Dolls">
+                <h2>Lambadi Dolls</h2>
+                <p>Price: Rs.229/-</p>
+                <button onclick="addToCart('Lambadi Dolls',229)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Other" onclick="addToCart('Puppets')">
+                <img src="toys11.jpg" alt="Puppets">
+                <h2>Puppets</h2>
+                <p>Price: Rs.299/-</p>
+                <button onclick="addToCart('Puppets',299)">Add to Cart</button>
+            </div>
+            <div class="product" data-type="Other" onclick="addToCart('Wooden Tops (Lattu)')">
+                <img src="toys12.jpg" alt="Wooden Tops (Lattu)">
+                <h2>Wooden Tops (Lattu)</h2>
+                <p>Price: Rs.49/-</p>
+                <button onclick="addToCart('Wooden Tops (Lattu)',49)">Add to Cart</button>
+            </div>
+            </div>
+
+            <aside class="category-nav">
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search for items...">
+                </div>
+                <h2 style="color: brown;">Categories</h2><hr>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><a href="pottery.html">Pottery</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="sarees.html">Sarees</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="medicinals.html">Medicines</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="toys.html">Toys</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="baskets.html">Baskets</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="leather.html">Leather</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="jewellery.html">Jewellery</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="stones.html">Stone Sculptures</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Traditional Crafts Store</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Store original products
+        const products = Array.from(document.querySelectorAll(".product"));
+
+        // Price range elements
+        const minPriceInput = document.getElementById("minPriceInput");
+        const maxPriceInput = document.getElementById("maxPriceInput");
+        const priceRangeDisplay = document.getElementById("priceRangeDisplay");
+
+        // Initialize values
+        minPriceInput.value = 0;
+        maxPriceInput.value = 600;
+
+        // Apply filter functionality
+        document
+            .getElementById("applyFilters")
+            .addEventListener("click", function () {
+                const selectedTypes = Array.from(
+                    document.querySelectorAll('.filters input[type="checkbox"]:checked')
+                ).map((cb) => cb.value);
+
+                // Get min and max price from input fields
+                const minPrice = parseInt(minPriceInput.value) || 0;
+                const maxPrice = parseInt(maxPriceInput.value) || 600;
+
+                // Filter products based on selected types and price range
+                const filteredProducts = products.filter((product) => {
+                    const price = parseInt(
+                        product
+                            .querySelector("p")
+                            .textContent.replace("Price: Rs.", "")
+                            .replace("/-", "")
+                    );
+                    const type = product.dataset.type;
+
+                    return (
+                        (selectedTypes.includes("All") || selectedTypes.includes(type)) &&
+                        price >= minPrice &&
+                        price <= maxPrice
+                    );
+                });
+
+                // Sort products based on selected sorting option
+                const sortOption = document.getElementById("sortSelect").value;
+                if (sortOption === "az") {
+                    filteredProducts.sort((a, b) =>
+                        a
+                            .querySelector("h2")
+                            .textContent.localeCompare(b.querySelector("h2").textContent)
+                    );
+                } else if (sortOption === "za") {
+                    filteredProducts.sort((a, b) =>
+                        b
+                            .querySelector("h2")
+                            .textContent.localeCompare(a.querySelector("h2").textContent)
+                    );
+                } else if (sortOption === "priceLowToHigh") {
+                    filteredProducts.sort((a, b) => {
+                        const priceA = parseInt(
+                            a
+                                .querySelector("p")
+                                .textContent.replace("Price: Rs.", "")
+                                .replace("/-", "")
+                        );
+                        const priceB = parseInt(
+                            b
+                                .querySelector("p")
+                                .textContent.replace("Price: Rs.", "")
+                                .replace("/-", "")
+                        );
+                        return priceA - priceB;
+                    });
+                } else if (sortOption === "priceHighToLow") {
+                    filteredProducts.sort((a, b) => {
+                        const priceA = parseInt(
+                            a
+                                .querySelector("p")
+                                .textContent.replace("Price: Rs.", "")
+                                .replace("/-", "")
+                        );
+                        const priceB = parseInt(
+                            b
+                                .querySelector("p")
+                                .textContent.replace("Price: Rs.", "")
+                                .replace("/-", "")
+                        );
+                        return priceB - priceA;
+                    });
+                }
+
+                // Update the display of products
+                const productContainer = document.querySelector(".product-container");
+                productContainer.innerHTML = ""; // Clear the existing products
+                filteredProducts.forEach((product) => {
+                    productContainer.appendChild(product);
+                });
+
+                // Update price range display
+                priceRangeDisplay.textContent = `Rs.${minPrice} - Rs.${maxPrice}`;
+            });
+
+        // Add to cart functionality
+        function addToCart(name, price) {
+            const item = { name, price, quantity: 1 };
+
+            // Check if item is already in cart
+            const existingItemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
+            if (existingItemIndex !== -1) {
+                // Increase quantity if item already exists
+                cart[existingItemIndex].quantity += item.quantity;
+            } else {
+                // Otherwise, add new item
+                cart.push(item);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            
+        }
+
+        function updateCartCount() {
+            document.getElementById("cart-count").textContent = cart.length;
+        }
+
+        // Initial cart count update
+        updateCartCount();
+
+        // Theme toggle functionality
+        const toggleIcon = document.getElementById("toggleIcon");
+
+        // Check localStorage for theme preference
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+            toggleIcon.style.transform = 'rotate(180deg)'; // Rotate for dark mode
+        }
+
+        // Add click event listener to the image
+        toggleIcon.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+
+            // Save theme preference to localStorage
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+                toggleIcon.style.transform = 'rotate(180deg)'; // Rotate for dark mode
+            } else {
+                localStorage.setItem("theme", "light");
+                toggleIcon.style.transform = 'rotate(0deg)'; // Reset rotation for light mode
+            }
+        });
+
+        const searchBar = document.querySelector('.search-bar');
+
+        searchBar.addEventListener('input', function() {
+            const searchTerm = searchBar.value.toLowerCase();
+            products.forEach(product => {
+                const title = product.querySelector('h2').textContent.toLowerCase();
+                product.style.display = title.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background-color: rgb(218, 215, 127);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+}
+
+.form-container {
+    width: 50%;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Ensure proper stacking */
+    z-index: 2; /* Bring form to the front */
+    list-style-type: none;
+    
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+}
+
+.form-container a {
+    text-decoration: none; /* Remove underline */
+    color: #006eff; /* Set the color to match your button or desired color */
+}
+
+.form-container label {
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form-container button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1.0rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.image-container {
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure proper stacking */
+}
+
+.image-container img {
+    width: 100%; /* Use full width of the container */
+    height: 100%; /* Use full height of the container */
+    border-radius: 20; /* Remove rounded corners */
+    object-fit: cover; /* Ensure it covers the entire area */
+    position: absolute; /* Position absolutely within the container */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Send image behind the form */
+}

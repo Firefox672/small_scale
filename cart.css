@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up full height */
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    height: 90px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Create space between items */
+}
+
+.back-button {
+    margin-left: 20px;
+}
+
+.back-icon {
+    width: 30px; /* Adjust the width of the back icon */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align the image vertically */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+header h1 {
+    flex-grow: 1; /* Allow title to grow and center itself */
+    text-align: center; /* Center the title text */
+}
+
+main {
+    padding: 20px;
+    flex: 1; /* This allows the main to grow and fill available space */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+input[type="number"] {
+    width: 60px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin: 2px 0; /* Add some space above and below the button */
+}
+
+.checkout-container {
+    text-align: center; /* Center the button */
+    margin: 75px 0; /* Add space above and below */
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}

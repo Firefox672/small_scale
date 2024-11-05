@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Pottery Store</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="back-button">
+                <img src="back.jpg" alt="Back" class="back-icon">
+            </a>
+            <h1>Your Cart</h1>
+        </div>
+    </header>
+
+    <main>
+        <h2>Items in Your Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be rendered here -->
+            </tbody>
+        </table>
+        <div class="button-container">
+            <button onclick="clearCart()">Clear Cart</button>
+        </div>
+        <div class="checkout-container">
+            <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Traditional Crafts Store</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Function to render cart items
+function renderCartItems() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = ''; // Clear existing items
+
+    cart.forEach((item, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>Rs.${item.price}/-</td>
+            <td><input type="number" value="${item.quantity || 1}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
+            <td>Rs.${(item.price * (item.quantity || 1))}/-</td>
+            <td><button onclick="removeFromCart(${index})">Remove</button></td>
+        `;
+        cartItemsContainer.appendChild(row);
+    });
+}
+
+// Function to update the quantity of an item
+function updateQuantity(index, quantity) {
+    cart[index].quantity = parseInt(quantity);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartItems();
+}
+
+// Function to remove an item from the cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartItems();
+}
+
+// Function to clear the cart
+function clearCart() {
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartItems();
+}
+
+// Function to add an item to the cart
+function addItemToCart(item) {
+    const existingItemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
+
+    if (existingItemIndex !== -1) {
+        // Item already exists, update the quantity
+        cart[existingItemIndex].quantity += item.quantity; // assuming item.quantity is available
+    } else {
+        // Add new item to cart
+        cart.push(item);
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCartItems();
+}
+
+function proceedToCheckout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items to the cart before proceeding to checkout.");
+    } else {
+        window.location.href = "checkout.html"; // Replace with your checkout page
+    }
+}
+
+// Initial rendering of cart items on page load
+document.addEventListener('DOMContentLoaded', () => {
+    renderCartItems();
+});
+
+    </script>
+</body>
+</html>

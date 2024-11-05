@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0; /* Uniform padding */
+    text-align: center;
+    height: 120px; /* Increased height for better visibility */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+}
+
+nav {
+    display: flex; /* Flexbox for nav items */
+    flex: 1; /* Allow nav to take remaining space */
+    justify-content: center; /* Center nav items */
+    
+}
+
+nav ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+nav ul li {
+    margin: 0 15px; /* Margin between list items */
+}
+
+
+nav a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+nav ul li a img.icon {
+    width: 50px; /* Set the width of the icons */
+    height: 50px; /* Set the height of the icons */
+    vertical-align: middle; /* Align the icons with the text */
+}
+
+nav ul li a:hover img.icon {
+    opacity: 0.7; /* Optional hover effect for icons */
+}
+
+
+.header-icons {
+    position: absolute; /* Position relative to the header */
+    right: 15px; /* Distance from the right edge */
+    top: 50px; /* Distance from the top edge */
+    display: flex; /* Use flex to arrange icons */
+    align-items: center; /* Center icons vertically */
+}
+
+.header-icons .icon {
+    width: 40px; /* Adjust icon size */
+    height: 40px; /* Adjust icon size */
+    margin-left: 15px; /* Increased space between icons */
+    opacity: 0.9; /* Slightly transparent to blend */
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+
+.header-icons .icon:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
+
+.cart-link {
+    position: relative; /* Needed for the badge positioning */
+}
+
+.cart-count {
+    position: absolute;
+    top: 20px; /* Adjust to position the count correctly */
+    right: -7px; /* Adjust to position the count correctly */
+    background-color: red; /* Background color of the badge */
+    color: white; /* Text color */
+    border-radius: 50%; /* Makes it circular */
+    width: 20px; /* Width of the circle */
+    height: 20px; /* Height of the circle */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    font-size: 12px; /* Font size of the count */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.back-button {
+    position: absolute; /* Position it relative to the header */
+    left: 15px; /* Distance from the left edge */
+    top: 44px; /* Distance from the top edge */
+}
+
+.back-icon {
+    width: 30px; /* Adjust the width of the back icon */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align the image vertically */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Allow main to grow and take up available space */
+    background-color: #fff; /* White background for contrast */
+}
+
+.contact-intro {
+    margin-bottom: 20px; /* Space below intro */
+}
+
+.contact-intro h2 {
+    font-size: 2rem; /* Increased font size */
+    color: #000000;
+}
+
+.contact-form-section {
+    margin: 20px auto; /* Center the form section */
+    background-color: #e8f5e9; /* Light green background */
+    border: 2px solid rgb(192, 216, 216); /* Initial red border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    max-width: 600px; /* Maximum width for form section */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.contact-form-section h2 {
+    border-bottom: 2px solid #a4ddda; /* Underline */
+    padding-bottom: 10px;
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin: 10px 0 5px; /* Margin for spacing */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Space below each field */
+    border: 1px solid #ca1818;
+    border-radius: 5px;
+    font-size: 1rem; /* Font size for inputs */
+    transition: border-color 0.3s; /* Transition for focus */
+}
+
+input:focus, textarea:focus {
+    border-color: skyblue; /* Change border color to sky blue on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem; /* Font size for button */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+}
+
+button:hover {
+    background-color: #1ea7a9; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.contact-info {
+    margin-top: 30px; /* Space above contact info */
+    text-align: center; /* Left align the info */
+    background-color: #eff0c9; /* Light background */
+    padding: 15px; /* Inner padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.contact-info h2 {
+    color: black;
+}
+
+.contact-info p {
+    margin: 5px 0; /* Space between lines */
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    width: 100%;
+}

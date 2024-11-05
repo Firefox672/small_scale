@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Traditional Crafts Store</title>
+    <link rel="stylesheet" href="about.css">
+    <script>
+        // Function to update the cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElement = document.getElementById('cart-count');
+            cartCountElement.textContent = cart.length;
+        }
+
+        // Initial update of the cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            <img src="back.jpg" alt="Back" class="back-icon">
+        </a>
+        <h1>Traditional Crafts Store</h1>
+        <nav>
+            <ul>
+                <li style="font-size: 19px;"><a href="index.html">Home</a></li>
+                <li style="font-size: 19px;"><a href="about.html">About</a></li>
+                <li style="font-size: 19px;"><a href="contact.html">Contact Us</a></li>
+                <li style="font-size: 19px;"><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="header-icons">
+                <a href="cart.html" class="cart-link">
+                    <img src="cart.jpg" alt="Cart" class="icon">
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+                <a href="signin.html"><img src="user1.jpg" alt="User" class="icon"></a>
+            </div>
+        </nav>
+    </header>    
+
+    <main>
+        <section class="about-intro">
+            <h2>About Us</h2>
+            <p>At Traditional Crafts Store, we are passionate about preserving the rich cultural heritage of artisans and their crafts. Our mission is to connect artisans with customers who appreciate the beauty of handcrafted products.</p>
+        </section>
+
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>We aim to provide a platform that empowers artisans, promotes sustainable practices, and helps preserve traditional crafts. Each product is a testament to the skill and creativity of its maker, and we believe in supporting these talented individuals.</p>
+        </section>
+
+        <section class="values-section">
+            <h2>Our Values</h2>
+            <ul>
+                <li>Authenticity: We ensure that every product is handmade and true to its cultural roots.</li>
+                <li>Sustainability: Our focus is on eco-friendly practices and materials.</li>
+                <li>Community: We believe in uplifting local communities through fair trade.</li>
+                <li>Education: We strive to educate our customers about the stories behind each craft.</li>
+            </ul>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <p>Our team is dedicated to promoting traditional crafts and supporting artisans. We work closely with them to ensure their needs are met and their voices are heard.</p>
+            
+            <div class="team-container">
+                <div class="team-member" onclick="showMemberInfo('member1')">
+                    <div class="team-member-circle">
+                        <img src="member1.jpg" alt="Sai Tarun" />
+                    </div>
+                    <h3> Sai Tarun</h3>
+                </div>
+                <div class="team-member" onclick="showMemberInfo('member2')">
+                    <div class="team-member-circle">
+                        <img src="member2.jpg" alt="Ravi Kumar" />
+                    </div>
+                    <h3>Ravi Kumar</h3>
+                </div>
+                <div class="team-member" onclick="showMemberInfo('member3')">
+                    <div class="team-member-circle">
+                        <img src="member3.jpg" alt="Meera Patel" />
+                    </div>
+                    <h3>Meera Patel</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="artisans-section">
+            <h2>Meet Our Artisans</h2>
+            <p>Our artisans are the backbone of our store, bringing their unique talents and traditions to life through their crafts.</p>
+            
+            <div class="artisans-container">
+                <div class="artisan-member" onclick="showArtisanInfo('artist1')">
+                    <div class="artisan-member-circle">
+                        <img src="artist1.jpg" alt="Artisan 1" />
+                    </div>
+                    <h3>Verayya</h3>
+                </div>
+                <div class="artisan-member" onclick="showArtisanInfo('artist2')">
+                    <div class="artisan-member-circle">
+                        <img src="artist2.jpg" alt="Artisan 2" />
+                    </div>
+                    <h3>Ganapathi</h3>
+                </div>
+                <div class="artisan-member" onclick="showArtisanInfo('artist3')">
+                    <div class="artisan-member-circle">
+                        <img src="artist3.jpg" alt="Artisan 3" />
+                    </div>
+                    <h3>Mohan</h3>
+                </div>
+            </div>
+        
+            <!-- Modal for Artisan Information -->
+            <div id="artisan-modal" class="artisan-modal">
+                <div class="artisan-modal-content">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <div id="artisan-info" class="artisan-info"></div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Function to show team member info in a modal
+            function showMemberInfo(member) {
+                const info = {
+                    member1: "Sai Tarun - Founder & CEO. Tarun has a deep passion for traditional crafts and has dedicated his life to promoting artisans and their work.",
+                    member2: "Ravi Kumar - Artisan Liaison. Ravi works directly with artisans to help them navigate the modern market while staying true to their traditions.",
+                    member3: "Meera Patel - Marketing Director. Meera ensures that the stories of our artisans are shared widely, connecting them with customers who care."
+                };
+
+                const memberInfoDiv = document.getElementById('member-info');
+                memberInfoDiv.textContent = info[member];
+
+                const modal = document.getElementById('member-modal');
+                modal.style.display = "block"; // Show the modal
+            }
+
+            // Function to close the member info modal
+            function closeMemberModal() {
+                const modal = document.getElementById('member-modal');
+                modal.style.display = "none"; // Hide the modal
+            }
+
+            // Adding event listener to close modal when clicking outside
+            window.onclick = function(event) {
+                const modal = document.getElementById('member-modal');
+                if (event.target == modal) {
+                    closeMemberModal();
+                }
+            };
+
+            function showArtisanInfo(artisan) {
+                const info = {
+                    artist1: "Verayya - A skilled craftsman known for intricate woodwork and traditional techniques.",
+                    artist2: "Ganapathi - A master weaver who brings vibrant colors and patterns to life.",
+                    artist3: "Mohan - An expert potter, creating beautiful and functional pottery.",
+                };
+        
+                const artisanInfoDiv = document.getElementById('artisan-info');
+                artisanInfoDiv.textContent = info[artisan];
+        
+                const modal = document.getElementById('artisan-modal');
+                modal.style.display = "block"; // Show the modal
+            }
+        
+            function closeModal() {
+                const modal = document.getElementById('artisan-modal');
+                modal.style.display = "none"; // Hide the modal
+            }
+        </script>        
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Traditional Crafts Store | Empowering Artisans, Preserving Culture</p>
+    </footer>
+    <!-- Modal for Team Member Information -->
+    <div id="member-modal" class="member-modal">
+        <div class="member-modal-content">
+            <span class="close-button" onclick="closeMemberModal()">&times;</span>
+            <div id="member-info" class="member-info"></div>
+        </div>
+    </div>
+
+</body>
+</html>

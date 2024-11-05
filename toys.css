@@ -1,0 +1,402 @@
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in total width and height */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+header {
+    background-color: #4CAF50; /* Header background color */
+    color: white;
+    text-align: center;
+    align-items: center;
+    height: 100px;
+    padding: 15px;
+    display: flex; /* Use flexbox for header */
+    justify-content: center; /* Center the header content */
+    position: relative; /* For positioning */
+}
+
+h1 {
+    margin: 0 0 10px 0; /* No margin on top, space below */
+}
+
+nav {
+    display: flex; /* Flexbox for nav items */
+    flex: 1; /* Allow nav to take remaining space */
+    justify-content: center; /* Center nav items */
+    
+}
+
+nav ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+nav ul li {
+    margin: 0 15px; /* Margin between list items */
+}
+
+
+nav a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Create space between items */
+}
+
+.back-button {
+    margin-right: auto;
+}
+
+.back-icon {
+    width: 30px; /* Adjust the width of the back icon */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align the image vertically */
+    cursor: pointer; /* Change cursor on hover */
+    
+}
+
+/* Existing styles */
+
+#cart-icon {
+    position: absolute; /* Position cart icon absolutely */
+    right: 45px; /* Align to the right with some spacing */
+}
+
+.icon {
+    width: 35px; /* Set a specific width for the icon */
+    height: 35px; /* Maintain aspect ratio */
+    margin-right: 5px; /* Space between icon and count */
+}
+
+#cart-count {
+    position: absolute;
+    top: 20px; /* Adjust to position the count correctly */
+    right: -8px; /* Adjust to position the count correctly */
+    background-color: red; /* Background color of the badge */
+    color: white; /* Text color */
+    border-radius: 50%; /* Makes it circular */
+    width: 20px; /* Width of the circle */
+    height: 20px; /* Height of the circle */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    font-size: 12px; /* Font size of the count */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+
+main {
+    padding: 20px;
+    text-align: center; /* Center-align text */
+}
+
+.range-container {
+    position: relative; /* Positioning for overlay */
+}
+
+input[type="range"] {
+    width: 100%; /* Full width for range input */
+    margin: 10px 0; /* Space above and below the range input */
+    -webkit-appearance: none; /* Remove default styling */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Custom thumb styling */
+    width: 15px; /* Thumb width */
+    height: 15px; /* Thumb height */
+    background: #4CAF50; /* Thumb color */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 50%; /* Rounded thumb */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px; /* Thumb width */
+    height: 15px; /* Thumb height */
+    background: #4CAF50; /* Thumb color */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 50%; /* Rounded thumb */
+}
+
+.range-labels {
+    display: flex; /* Flexbox for aligning labels */
+    justify-content: space-between; /* Space between labels */
+}
+
+.filter-types {
+    margin: 10px 0; /* Add some margin to the section */
+}
+
+.filter-types label {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center the checkbox and text vertically */
+    margin: 5px 0; /* Space between each label */
+}
+
+.filter-types input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label text */
+}
+
+
+.main-content {
+    display: flex;
+    justify-content: space-between; /* Spread filters, products, and categories across the page */
+    align-items: flex-start; /* Align all sections to the top */
+    gap: 20px; /* Ensure there is some space between each section */
+}
+
+.filters {
+    flex: 0 0 160px; /* Fixed width for filters */
+    margin-right: 20px; /* Space between filters and product container */
+    font-size: 1.1rem; /* Increase the base font size for all filter elements */
+    line-height: 1.8; /* Increase line height for better spacing */
+}
+
+.product-container {
+    flex: 1; /* Take remaining space */
+    display: flex; /* Flexbox for products */
+    flex-wrap: wrap; /* Allow wrapping of products */
+    justify-content: center; /* Center the product boxes */
+}
+
+.category-nav {
+    flex: 0 0 160px; /* Fixed width for category nav */
+    background-color: white; /* Light background for nav */
+    padding: 1px 20px; /* Padding inside */
+    margin: 0;
+    box-shadow: none; /* Remove box shadow */
+    border-radius: 5px;
+    height: 100%; /* Full height */
+}
+
+
+
+.category-nav table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove space between cells */
+}
+
+.category-nav td {
+    padding: 15px; /* Space inside each cell */
+    text-align: left; /* Align text to the left */
+    font-size: 1.2rem; /* Increase font size */
+    border-bottom: 1px solid #ccc; /* Add a bottom border for separation */
+}
+
+.category-nav a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-weight: bold; /* Bold text */
+    display: block; /* Make the link fill the cell */
+    text-align: center; /* Center-align text */
+}
+
+.category-nav a:hover {
+    color: brown; /* Change color on hover */
+    background-color: #f0f0f0; /* Background color on hover */
+}
+
+.category-nav tr {
+    line-height: 1.6; /* Increase line height for better readability */
+}
+
+.filters h2 {
+    margin-top: 0; /* Remove margin on top */
+    font-size: 1.5rem;
+}
+
+.filters div {
+    margin-bottom: 20px; /* Space between filter sections */
+}
+
+.filters input[type="range"] {
+    width: 100%; /* Full width for range input */
+}
+
+.filters button {
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor */
+    width: 100%; /* Full width */
+    font-size: 1rem; /* Increase font size for inputs and buttons */
+    line-height: 1.5; /* Increase line height for inputs and buttons */
+   
+}
+
+.filters button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+#sortSelect{
+    width: 160px;
+    height: 25px;
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.product-container {
+    flex: 1; /* Products take the remaining space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product {
+    flex: 0 0 calc(25% - 20px); /* Set to take 25% of the container width minus gap */
+    margin: 15px; /* Margin around product boxes */
+    border: 1px solid #ccc; /* Border around product boxes */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+    display: flex; /* Use flexbox for inner content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+    height: 350px; /* Fixed height for uniformity */
+    position: relative; /* Enable absolute positioning for children */
+}
+
+.product button {
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    position: absolute; /* Positioning button absolutely */
+    bottom: 10px; /* Position 10px from the bottom */
+}
+
+.product h2 {
+    font-size: 1.5rem; /* Heading font size */
+    margin: 10px 0; /* Space above and below the heading */
+    flex-grow: 1; /* Allow heading to take available space */
+}
+
+
+.product img {
+    width: auto; /* Allow images to be their original width */
+    height: auto; /* Allow images to be their original height */
+    max-width: 100%; /* Ensure images do not overflow their container */
+    max-height: 150px; /* Limit the height to a maximum to maintain layout */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-top-left-radius: 10px; /* Rounded corners on the top */
+    border-top-right-radius: 10px; /* Rounded corners on the top */
+}
+
+
+.product p {
+    font-size: 1.2rem; /* Price font size */
+    color: #333; /* Price color */
+    flex-grow: 1; /* Allow price to take available space */
+}
+
+.product button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slightly enlarge the product box on hover */
+}
+
+footer {
+    text-align: center; /* Center-align footer text */
+    padding: 15px;
+    background-color: #4CAF50; /* Footer background color */
+    color: white; /* Footer text color */
+    position: relative; /* Position relative for footer */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}
+
+/* pottery.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    display: flex;
+}
+
+
+
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow products to wrap */
+    gap: 20px; /* Space between products */
+    padding: 20px;
+}
+
+.product {
+    width: calc(33% - 20px); /* Adjust width for 3 products per row */
+    border: 1px solid #ccc; /* Add border around products */
+    padding: 10px;
+    text-align: center;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: left;
+    margin-top: -60px;
+    margin-bottom: 20px; /* Space below the toggle */
+    justify-content: left; /* Center the toggle horizontally */
+}
+
+.toggle-icon {
+    width: 34px; /* Adjust as needed */
+    height: 34px; /* Adjust as needed */
+    transition: transform 0.4s; /* Smooth transition */
+    background-color: transparent; /* Make background transparent */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+  body.dark-mode {
+    background-color: #1E1E1E; /* Dark mode background */
+    color: white; /* Dark mode text color */
+  }
+
+  body.dark-mode .product p {
+    color: #FFD700; /* Gold color for better visibility */
+}
+
+body.dark-mode .toggle-icon {
+    background-color: transparent; /* No background in dark mode */
+}
+
+.search-container {
+    margin: 20px 0; /* Space around the search bar */
+    margin-top: -60px;
+}
+
+.search-bar {
+    width: 200px; /* Full width */
+    padding: 10px; /* Padding for input */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+}
+
+.search-bar:focus {
+    outline: none; /* Remove outline on focus */
+    border-color: #4CAF50; /* Change border color on focus */
+}
+

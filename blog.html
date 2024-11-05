@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Traditional Crafts Store</title>
+    <link rel="stylesheet" href="blog.css">
+    <script>
+        // Function to update the cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElement = document.getElementById('cart-count');
+            cartCountElement.textContent = cart.length;
+        }
+
+        // Initial update of the cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            <img src="back.jpg" alt="Back" class="back-icon">
+        </a>
+        <h1>Traditional Crafts Store</h1>
+        <nav>
+            <ul>
+                <li style="font-size: 19px;"><a href="index.html">Home</a></li>
+                <li style="font-size: 19px;"><a href="about.html">About</a></li>
+                <li style="font-size: 19px;"><a href="contact.html">Contact Us</a></li>
+                <li style="font-size: 19px;"><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="header-icons">
+                <a href="cart.html" class="cart-link">
+                    <img src="cart.jpg" alt="Cart" class="icon">
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+                <a href="signin.html"><img src="user1.jpg" alt="User" class="icon"></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-posts">
+            <article class="blog-post">
+                <h2>Embracing Traditional Crafts: The Journey of Artisans</h2>
+                <p class="date">Published on September 15, 2024</p>
+                <img src="artisan-journey.jpg" alt="Artisan Journey">
+                <p>
+                    Discover the incredible stories behind our artisans. From their humble beginnings to becoming masters of their craft, each artisan has a unique journey worth celebrating. Learn how their skills have been passed down through generations and how they continue to adapt in today's market.
+                </p>
+                <a href="#">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>The Art of Handwoven Sarees</h2>
+                <p class="date">Published on August 30, 2024</p>
+                <img src="handwoven-sarees.jpg" alt="Handwoven Sarees">
+                <p>
+                    Handwoven sarees are not just garments; they are a canvas of art. Explore the intricate techniques and vibrant colors that make each saree unique. Join us in understanding the labor of love that goes into weaving these traditional pieces.
+                </p>
+                <a href="#">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>Pottery: A Blend of Tradition and Innovation</h2>
+                <p class="date">Published on August 15, 2024</p>
+                <img src="pottery-art.jpg" alt="Pottery Art">
+                <p>
+                    Pottery has been a cornerstone of many cultures for centuries. In this post, we delve into the fascinating world of pottery, showcasing the techniques that have evolved while still respecting the traditions of the past.
+                </p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Traditional Crafts Store | Empowering Artisans, Preserving Culture</p>
+    </footer>
+</body>
+</html>

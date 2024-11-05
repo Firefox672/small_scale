@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traditional Crafts Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Traditional Crafts Store</h1>
+        <nav>
+            <ul>
+                <li style="font-size: 19px;"><a href="index.html">Home</a></li>
+                <li style="font-size: 19px;"><a href="about.html">About</a></li>
+                <li style="font-size: 19px;"><a href="contact.html">Contact Us</a></li>
+                <li style="font-size: 19px;"><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="header-icons">
+                <a href="cart.html" class="cart-link">
+                    <img src="cart.jpg" alt="Cart" class="icon">
+                    <span id="cart-count" class="cart-count">0</span> <!-- Cart count display -->
+                </a>
+                <a href="signin.html"><img src="user1.jpg" alt="User" class="icon"></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main-intro">
+        <h2>Preserving Tradition, Empowering Artisans</h2>
+        <p>
+            Welcome to the Traditional Crafts Store, where we bring the heart and soul of small-scale artisans to the world! 
+            Discover the beauty of handwoven sarees, intricately designed pottery, traditional toys, and tribal medicinal products. 
+            By shopping with us, you support a sustainable livelihood for artisans and preserve timeless traditions for future generations.
+        </p>
+    </section>
+
+    <main>
+        <section class="scrolling-photos">
+            <div class="scrolling-wrapper">
+                <a href="pottery.html"><img src="pottery-icon.jpg" alt="Pottery"></a>
+                <a href="sarees.html"><img src="saree-icon.jpg" alt="Sarees"></a>
+                <a href="medicinals.html"><img src="medicinal-icon.jpg" alt="Tribal Medicinals"></a>
+                <a href="toys.html"><img src="toy-icon.jpg" alt="Traditional Toys"></a>
+                <a href="baskets.html"><img src="baskets-icon.jpg" alt="Baskets"></a>
+                <a href="leather.html"><img src="leather-icon.jpg" alt="Leather"></a>
+                <a href="jewellery.html"><img src="jewellery-icon.jpg" alt="Jewellery"></a>
+                <a href="stones.html"><img src="stones-icon.jpg" alt="Stone Sculptures"></a>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Why Choose Us?</h2>
+            <p>
+                At the Traditional Crafts Store, we believe in more than just selling products—we're preserving the rich cultural 
+                heritage of rural communities. Our artisans use techniques passed down through generations, creating products that 
+                are not only beautiful but are a part of our shared history. Every purchase directly supports these artisans, giving 
+                them a sustainable income and ensuring their craft continues to thrive.
+            </p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Join Us in Empowering Artisans</h2>
+            <p>
+                Become a part of our mission by exploring our wide range of handmade products. Whether you’re looking for 
+                unique gifts, eco-friendly home decor, or one-of-a-kind fashion pieces, you’ll find something special here. 
+                Together, we can support artisans and keep these incredible traditions alive.
+            </p><br>
+            <a href="shopnow.html">Shop Now</a>
+        </section>
+
+        <h2 style="text-align:center;">Different Category of Products Available</h2>
+
+        <div class="category-container">
+            <div class="category" style="background-image: url('pottery-icon.jpg');" >
+                Pottery
+            </div>
+            <div class="category" style="background-image: url('saree-icon.jpg');" >
+                Sarees
+            </div>
+            <div class="category" style="background-image: url('medicinal-icon.jpg');" >
+                Tribal Medicinals
+            </div>
+            <div class="category" style="background-image: url('toy-icon.jpg');" >
+                Traditional Toys
+            </div>
+            <div class="category" style="background-image: url('baskets-icon.jpg');" >
+                Baskets
+            </div>
+            <div class="category" style="background-image: url('leather-icon.jpg');" >
+                Leather
+            </div>
+            <div class="category" style="background-image: url('jewellery-icon.jpg');" >
+                Jewellery
+            </div>
+            <div class="category" style="background-image: url('stones-icon.jpg');" >
+                Stone Sculptures
+            </div>
+        </div>
+
+        <div class="boxes-container">
+            <section class="testimonial-section" onclick="toggleTestimonial()">
+                <div class="box">
+                    <h2>Customer Testimonials</h2>
+                    <div class="testimonial-content" style="display: none;">
+                        <blockquote>
+                            "I absolutely love my handwoven saree! The quality is unmatched, and I feel great knowing my purchase supports local artisans."
+                            <cite>- Priya R.</cite>
+                        </blockquote>
+                        <blockquote>
+                            "The pottery I bought is not only beautiful but functional. Every piece tells a story!"
+                            <cite>- John D.</cite>
+                        </blockquote>
+                        <blockquote>
+                            "I appreciate how Traditional Crafts Store showcases the talent of artisans. Their work is truly inspiring!"
+                            <cite>- Sarah K.</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="artisan-profile-section" onclick="toggleArtisanProfiles()">
+                <div class="box">
+                    <h2>Meet Our Artisans</h2>
+                    <div class="artisan-content" style="display: none;">
+                        <div class="artisan-profile">
+                            <h3>Arjun, Pottery Artisan</h3>
+                            <p>Arjun has been crafting pottery for over 20 years, using techniques passed down from his grandfather. His work reflects the beauty of traditional designs.</p>
+                        </div>
+                        <div class="artisan-profile">
+                            <h3>Sita, Saree Weaver</h3>
+                            <p>Sita comes from a long line of weavers. Her sarees are known for their intricate patterns and vibrant colors, each telling a unique story of her heritage.</p>
+                        </div>
+                        <div class="artisan-profile">
+                            <h3>Raj, Toy Maker</h3>
+                            <p>Raj specializes in traditional wooden toys that promote creativity and imagination. His toys are handmade with love and attention to detail.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="app-download-section">
+            <h2>Download Our App</h2>
+            <p>Enjoy a seamless shopping experience on the go. Download our app from your preferred store:</p>
+            <div class="app-icons">
+                <a href="playstore.html" target="_blank">
+                    <img src="google.jpg" alt="Get it on Google Play" class="app-icon">
+                </a>
+                <a href="appstore.html" target="_blank">
+                    <img src="apple.jpg" alt="Download on the App Store" class="app-icon">
+                </a>
+                
+            </div>
+            <div class="social-media-icons">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="instagram-icon.jpg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="facebook-icon.jpg" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="twitter-icon.jpg" alt="Twitter" class="social-icon">
+                </a>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Traditional Crafts Store | Empowering Artisans, Preserving Culture</p>
+    </footer>
+
+    <script>
+        // Function to update the cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElement = document.getElementById('cart-count');
+            cartCountElement.textContent = cart.length;
+        }
+
+        // Initial update of the cart count on page load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+
+        function toggleTestimonial() {
+            const testimonialContent = document.querySelector('.testimonial-content');
+            testimonialContent.style.display = testimonialContent.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleArtisanProfiles() {
+            const artisanContent = document.querySelector('.artisan-content');
+            artisanContent.style.display = artisanContent.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
